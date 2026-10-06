@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toko Padasuka Furniture & Seprei</title>
+<style>
+:root{--bg:#f7f1e8;--card:#fffdf9;--brown:#604533;--soft:#e6d7c6;--sage:#7d8b73;--text:#30251e}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}button,input,select{font:inherit}
+header{position:sticky;top:0;z-index:10;background:#fffdf9eF;border-bottom:1px solid #eadfd3;backdrop-filter:blur(10px)}
+.nav{max-width:1180px;margin:auto;padding:15px 20px;display:flex;align-items:center;gap:25px}.brand{margin-right:auto;font-family:Georgia,serif;font-size:23px;font-weight:bold;color:var(--brown)}.brand small{display:block;font:10px Arial;letter-spacing:3px;color:var(--sage)}
+nav{display:flex;gap:22px}nav a{text-decoration:none;color:var(--text);font-weight:bold;font-size:14px}.navbtn{border:0;border-radius:10px;padding:10px 13px;background:var(--brown);color:#fff;cursor:pointer}
+.hero{max-width:1180px;margin:auto;padding:55px 20px;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.eyebrow{color:var(--sage);font-weight:bold;letter-spacing:2px;font-size:12px}.hero h1{font:700 clamp(42px,6vw,68px)/1.03 Georgia,serif;margin:14px 0}.hero p{color:#75675d;line-height:1.8;max-width:560px}.btn{padding:13px 19px;border:0;border-radius:10px;font-weight:bold;cursor:pointer}.primary{background:var(--brown);color:#fff}.secondary{background:#fff;border:1px solid var(--soft);color:var(--brown);margin-left:7px}
+.hero-photo{height:430px;border-radius:30px;background:linear-gradient(135deg,#e3d3c0,#a58b72);display:flex;align-items:center;justify-content:center;font-size:100px;overflow:hidden}.hero-photo img{width:100%;height:100%;object-fit:cover}
+section{max-width:1180px;margin:auto;padding:35px 20px}.heading{text-align:center;margin-bottom:25px}.heading h2{font:700 38px Georgia,serif;margin:7px}.filters{text-align:center;margin-bottom:24px}.filters button{border:1px solid var(--soft);background:#fffdf9;padding:9px 16px;border-radius:25px;margin:4px;cursor:pointer}.filters .on{background:var(--brown);color:white}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:var(--card);border:1px solid #e6d9cc;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px #5b402014}.pic{height:230px;background:#e4d6c6;position:relative;display:flex;align-items:center;justify-content:center;font-size:65px;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.upload{position:absolute;right:8px;bottom:8px;background:#fff;padding:7px 9px;border-radius:8px;font-size:11px;font-weight:bold;cursor:pointer}.upload input{display:none}.info{padding:15px}.info h3{font:600 19px Georgia,serif;margin:0}.cat{color:#8b7a6c;font-size:12px;margin:6px 0}.price{color:var(--brown);font-weight:bold}.add{margin-top:12px;width:100%;padding:10px;border-radius:9px;border:1px solid var(--soft);background:#fff;color:var(--brown);font-weight:bold;cursor:pointer}.add:hover{background:var(--brown);color:#fff}
+.about{background:var(--brown);color:#fff;border-radius:25px;padding:38px}.about p{color:#eadfd5;line-height:1.8}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:25px}.feature{background:#ffffff12;border:1px solid #ffffff25;padding:17px;border-radius:12px}.feature span{display:block;color:#e3d6cc;font-size:13px;margin-top:5px}
+footer{margin-top:35px;background:#fffdf9;text-align:center;padding:30px;color:#75675d}
+.panel{position:fixed;inset:0;background:#0006;z-index:30;display:none}.panel.show{display:block}.drawer{position:absolute;right:0;top:0;width:min(520px,94vw);height:100%;background:#fffdf9;padding:22px;overflow:auto}.drawer h2{font-family:Georgia,serif}.close{float:right;border:0;background:none;font-size:28px;cursor:pointer}.form{display:grid;gap:10px}.form input,.form select{width:100%;padding:11px;border:1px solid #dacbbb;border-radius:9px;background:white}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-list{margin-top:20px}.admin-item{display:grid;grid-template-columns:65px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #eee}.admin-item img,.admin-emoji{width:60px;height:60px;border-radius:9px;object-fit:cover;background:#e8dac9;display:grid;place-items:center;font-size:28px}.danger{background:#b84b45;color:white;border:0;border-radius:7px;padding:8px;cursor:pointer}.edit{background:#e8dccf;color:var(--brown);border:0;border-radius:7px;padding:8px;cursor:pointer}.cart{position:fixed;right:-410px;top:0;width:min(390px,92vw);height:100%;background:#fff;z-index:40;padding:22px;transition:.3s;box-shadow:-12px 0 30px #0002}.cart.open{right:0}.cartitems{height:70%;overflow:auto}.cartitem{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid #eee}.mini{width:58px;height:58px;background:#e8dac9;border-radius:8px;overflow:hidden;display:grid;place-items:center}.mini img{width:100%;height:100%;object-fit:cover}.total{display:flex;justify-content:space-between;font-weight:bold;font-size:18px;margin:15px 0}.wa{width:100%;padding:13px;border:0;border-radius:9px;background:var(--brown);color:#fff;font-weight:bold;cursor:pointer}
+@media(max-width:900px){nav{display:none}.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.grid{grid-template-columns:1fr 1fr}.pic{height:175px}.hero-photo{height:300px}.hero h1{font-size:42px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="brand"><small>TOKO</small><span id="brandName">PADASUKA</span></div>
+<nav><a href="#produk">Produk</a><a href="#tentang">Tentang</a><a href="#kontak">Kontak</a></nav>
+<button class="navbtn" onclick="openAdmin()">⚙️ Edit Toko</button>
+<button class="navbtn" onclick="openCart()">🛒 <span id="count">0</span></button>
+</div></header>
+
+<div class="hero">
+<div><div class="eyebrow">FURNITURE • SEPREI • HOME LIVING</div><h1>Rumah nyaman, dimulai dari Padasuka.</h1><p>Furniture dan seprei pilihan untuk membuat rumah lebih rapi, nyaman, dan estetik.</p><a class="btn primary" href="#produk">Belanja Sekarang</a><a class="btn secondary" href="#tentang">Tentang Kami</a></div>
+<div class="hero-photo" id="heroPhoto">🛏️ 🪑</div>
+</div>
+
+<section id="produk"><div class="heading"><div class="eyebrow">KOLEKSI PADASUKA</div><h2>Produk Pilihan</h2></div>
+<div class="filters"><button class="on" onclick="filter('all',this)">Semua</button><button onclick="filter('furniture',this)">Furniture</button><button onclick="filter('seprei',this)">Seprei</button><button onclick="filter('kamar',this)">Kamar Tidur</button></div>
+<div class="grid" id="grid"></div></section>
+
+<section id="tentang"><div class="about"><div class="eyebrow" style="color:#d9c1aa">TENTANG TOKO</div><h2 id="aboutTitle">Toko Padasuka Furniture & Seprei</h2><p id="aboutText">Menyediakan furniture dan seprei pilihan untuk kebutuhan rumah. Silakan hubungi kami untuk informasi produk, harga, stok, dan pemesanan.</p><div class="features"><div class="feature"><b>✓ Berkualitas</b><span>Produk pilihan untuk rumah.</span></div><div class="feature"><b>✓ Harga Bersahabat</b><span>Sesuaikan dengan kebutuhan.</span></div><div class="feature"><b>✓ Bisa Konsultasi</b><span>Tanya produk sebelum membeli.</span></div><div class="feature"><b>✓ Pesan Mudah</b><span>Langsung melalui WhatsApp.</span></div></div></div></section>
+<footer id="kontak"><b id="footerName">Toko Padasuka Furniture & Seprei</b><br><span id="footerContact">WhatsApp: 08xx-xxxx-xxxx · Instagram: @tokopadasuka</span><br><br>© 2026 Toko Padasuka</footer>
+
+<!-- ADMIN -->
+<div class="panel" id="adminPanel"><div class="drawer"><button class="close" onclick="closeAdmin()">×</button><h2>⚙️ Pengaturan Toko</h2>
+<div class="form"><label>Nama toko<input id="shopInput"></label><label>Nomor WhatsApp<input id="waInput" placeholder="628xxxxxxxxxx"></label><label>Instagram<input id="igInput" placeholder="@tokopadasuka"></label><label>Foto utama website<input type="file" id="heroInput" accept="image/*"></label><button class="btn primary" onclick="saveSettings()">Simpan Pengaturan</button></div>
+<hr><h2>➕ Tambah / Edit Produk</h2>
+<div class="form"><input type="hidden" id="editIndex"><label>Nama produk<input id="pName" placeholder="Contoh: Lemari Minimalis"></label><div class="row"><label>Harga<input id="pPrice" type="number" placeholder="450000"></label><label>Kategori<select id="pCat"><option value="furniture">Furniture</option><option value="seprei">Seprei</option><option value="kamar">Kamar Tidur</option></select></label></div><label>Foto produk<input type="file" id="pPhoto" accept="image/*"></label><button class="btn primary" onclick="saveProduct()">Simpan Produk</button><button class="btn secondary" onclick="resetForm()">Bersihkan Form</button></div>
+<div class="admin-list"><h2>📦 Daftar Produk</h2><div id="adminList"></div></div>
+</div></div>
+
+<!-- CART -->
+<div class="cart" id="cart"><button class="close" onclick="closeCart()">×</button><h2>🛒 Keranjang</h2><div class="cartitems" id="cartitems"></div><div class="total"><span>Total</span><span id="total">Rp0</span></div><button class="wa" onclick="checkout()">Pesan via WhatsApp</button></div>
+
+<script>
+const defaultProducts=[
+["Meja Kayu Minimalis","furniture",450000,"🪵"],["Kursi Santai Rotan","furniture",375000,"🪑"],["Lemari Minimalis 2 Pintu","furniture",1250000,"🚪"],["Rak Serbaguna","furniture",299000,"🗄️"],
+["Meja Samping Bedside","furniture",275000,"🛋️"],["Meja Makan Minimalis","furniture",950000,"🍽️"],["Kursi Makan Kayu","furniture",325000,"🪑"],["Rak Sepatu Minimalis","furniture",350000,"👟"],
+["Seprei Premium Sage","seprei",189000,"🛏️"],["Seprei Motif Floral","seprei",165000,"🌸"],["Seprei Motif Kotak","seprei",175000,"🧺"],["Seprei Premium Cream","seprei",199000,"🤍"],
+["Seprei Anak Motif Lucu","seprei",159000,"🧸"],["Bedcover Minimalis","seprei",245000,"🛌"],["Bantal Tidur Premium","kamar",89000,"🛏️"],["Sarung Bantal Set","kamar",65000,"🌿"]
+].map(x=>({name:x[0],cat:x[1],price:x[2],emoji:x[3],img:""}));
+
+let products=JSON.parse(localStorage.getItem("padasukaProducts")||"null")||defaultProducts;
+let settings=JSON.parse(localStorage.getItem("padasukaSettings")||"null")||{name:"Toko Padasuka Furniture & Seprei",wa:"6280000000000",ig:"@tokopadasuka",hero:""};
+let cart=[];
+
+const rp=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
+function saveData(){localStorage.setItem("padasukaProducts",JSON.stringify(products));localStorage.setItem("padasukaSettings",JSON.stringify(settings))}
+function render(list=products){
+ document.getElementById("grid").innerHTML=list.map((p,i)=>`<article class="card"><div class="pic">${p.img?`<img src="${p.img}">`:p.emoji}<label class="upload">📷 Ganti Foto<input type="file" accept="image/*" onchange="photo(${products.indexOf(p)},this)"></label></div><div class="info"><h3>${p.name}</h3><div class="cat">${cap(p.cat)}</div><div class="price">${rp(p.price)}</div><button class="add" onclick="add(${products.indexOf(p)})">+ Keranjang</button></div></article>`).join("");
+ renderAdmin()
+}
+function cap(x){return x==="furniture"?"Furniture":x==="seprei"?"Seprei":"Kamar Tidur"}
+function photo(i,input){if(!input.files[0])return;let r=new FileReader();r.onload=e=>{products[i].img=e.target.result;saveData();render()};r.readAsDataURL(input.files[0])}
+function filter(cat,b){document.querySelectorAll(".filters button").forEach(x=>x.classList.remove("on"));b.classList.add("on");render(cat==="all"?products:products.filter(p=>p.cat===cat))}
+function add(i){cart.push(products[i]);updateCart();openCart()}
+function updateCart(){document.getElementById("count").textContent=cart.length;document.getElementById("cartitems").innerHTML=cart.length?cart.map((p,i)=>`<div class="cartitem"><div class="mini">${p.img?`<img src="${p.img}">`:p.emoji}</div><div style="flex:1"><b>${p.name}</b><br>${rp(p.price)}</div><button onclick="cart.splice(${i},1);updateCart()">×</button></div>`).join(""):"<p style='text-align:center;color:#888;padding:40px'>Keranjang masih kosong.</p>";document.getElementById("total").textContent=rp(cart.reduce((s,p)=>s+p.price,0))}
+function openCart(){document.getElementById("cart").classList.add("open")}function closeCart(){document.getElementById("cart").classList.remove("open")}
+function openAdmin(){document.getElementById("adminPanel").classList.add("show");document.getElementById("shopInput").value=settings.name;document.getElementById("waInput").value=settings.wa;document.getElementById("igInput").value=settings.ig;renderAdmin()}
+function closeAdmin(){document.getElementById("adminPanel").classList.remove("show")}
+function saveSettings(){settings.name=document.getElementById("shopInput").value||"Toko Padasuka Furniture & Seprei";settings.wa=document.getElementById("waInput").value.replace(/\D/g,"");settings.ig=document.getElementById("igInput").value;let f=document.getElementById("heroInput").files[0];if(f){let r=new FileReader();r.onload=e=>{settings.hero=e.target.result;saveData();applySettings()};r.readAsDataURL(f)}else{saveData();applySettings()}}
+function applySettings(){document.getElementById("brandName").textContent=settings.name.replace(/^Toko /i,"").split(" ")[0]+" "+(settings.name.replace(/^Toko /i,"").split(" ")[1]||"");document.getElementById("aboutTitle").textContent=settings.name;document.getElementById("footerName").textContent=settings.name;document.getElementById("footerContact").textContent="WhatsApp: "+settings.wa+" · Instagram: "+settings.ig;if(settings.hero)document.getElementById("heroPhoto").innerHTML=`<img src="${settings.hero}">`}
+function saveProduct(){let n=document.getElementById("pName").value.trim(),price=+document.getElementById("pPrice").value,cat=document.getElementById("pCat").value,idx=document.getElementById("editIndex").value;if(!n||!price)return alert("Nama dan harga wajib diisi.");let f=document.getElementById("pPhoto").files[0];let done=img=>{let obj={name:n,price,cat,emoji:"🛍️",img:img||""};if(idx==="")products.push(obj);else{obj.emoji=products[idx].emoji;obj.img=img||products[idx].img;products[idx]=obj}saveData();resetForm();render()};if(f){let r=new FileReader();r.onload=e=>done(e.target.result);r.readAsDataURL(f)}else done("")}
+function editProduct(i){let p=products[i];document.getElementById("editIndex").value=i;document.getElementById("pName").value=p.name;document.getElementById("pPrice").value=p.price;document.getElementById("pCat").value=p.cat;window.scrollTo(0,0)}
+function deleteProduct(i){if(confirm("Hapus produk ini?")){products.splice(i,1);saveData();render()}}
+function resetForm(){document.getElementById("editIndex").value="";document.getElementById("pName").value="";document.getElementById("pPrice").value="";document.getElementById("pPhoto").value=""}
+function renderAdmin(){let box=document.getElementById("adminList");if(!box)return;box.innerHTML=products.map((p,i)=>`<div class="admin-item"><div class="admin-emoji">${p.img?`<img src="${p.img}">`:p.emoji}</div><div><b>${p.name}</b><br><small>${cap(p.cat)} · ${rp(p.price)}</small></div><div><button class="edit" onclick="editProduct(${i})">Edit</button> <button class="danger" onclick="deleteProduct(${i})">Hapus</button></div></div>`).join("")}
+function checkout(){if(!cart.length)return alert("Keranjang masih kosong.");let text="Halo "+settings.name+", saya ingin memesan:%0A"+cart.map(p=>"- "+p.name+" - "+rp(p.price)).join("%0A")+"%0A%0ATotal: "+rp(cart.reduce((s,p)=>s+p.price,0));window.open("https://wa.me/"+settings.wa+"?text="+text,"_blank")}
+applySettings();render();updateCart();
+</script>
+</body>
+</html>
